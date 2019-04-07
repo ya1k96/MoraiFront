@@ -1,0 +1,92 @@
+#btn-saber {
+    background-color: rgb(51, 51, 51) !important;
+    border:rgb(51, 51, 51) !important
+}
+#nav-bar {
+    color: black !important;
+    font-size: 15px;
+}
+#nav-bar.navbar-brand {
+    font-size: 30px !important;
+}
+.nav-link {
+    color: black !important;
+}
+#mainNav {
+    background-color: rgb(180, 213, 107) !important;
+}
+.intro-lead-in {
+    color: rgb(180, 213, 107) !important;
+}
+.intro-heading {
+    color: rgb(180, 213, 107) !important;
+}
+nav {
+    height: 4rem;
+}
+.navbar-shrink {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: #212529;
+    height: 100px !important;
+}
+.intro-lead-in {
+    font-size: 100px !important;
+}
+.intro-heading {
+    font-size: 50px !important;
+    font-size-adjust: initial;
+}
+div.intro-text {
+    padding-top: 100px !important;
+}
+#mainNav .navbar-toggler {
+    background-color: rgb(51, 51, 51);
+}
+
+ul.navbar-nav {
+    background-color: rgb(180, 213, 107) !important;
+}
+
+div.navbar-collapse.collapse.show {
+    height: 200px;
+}
+
+div.container {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.navbar {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+li.nav-item {
+    text-align: end;
+}
+#services {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+#portfolio {
+    padding-top: 3rem;
+}
+#about {
+    padding-top: 1rem;
+}
+#bt-productos {
+    background-color: rgb(51, 51, 51) !important;
+    border:rgb(51, 51, 51) !important;
+}
+.text-primary {
+    color: rgb(51, 51, 51) !important;
+}
+
+@media (min-width: 570px) {
+    html {
+        width: 100% !important;
+    }
+}
+i {
+ color: white;
+}

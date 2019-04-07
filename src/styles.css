@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.nav-clase {
+    width: 95% !important;
+}
+i.far.fa-user-circle.pt-2.fa-2x{
+    color: black;
+}
+i.far.fa-user-circle.pt-2.fa-2x:hover{
+    cursor: pointer;
+}
+.bg-greenMorai {
+    background-color: rgb(180, 213, 107) !important;
+}
