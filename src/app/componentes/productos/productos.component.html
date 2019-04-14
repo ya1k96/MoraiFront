@@ -1,0 +1,25 @@
+<div class="container mt-5 pt-4 animated fadeIn fast" *ngIf="producto">  
+    <div class="row" >
+      <div class="col-md-8 mt-5">
+        <app-productos-child [producto]="producto"></app-productos-child>    
+      </div>
+      <div class="col-md-3 mt-5">
+        <img src="../../../assets/img/productos/NOIMG.png" alt="" class="img-thumbnail mt-1">
+        <img src="../../../assets/img/productos/NOIMG.png" alt="" class="img-thumbnail mt-1">
+        <img src="../../../assets/img/productos/NOIMG.png" alt="" class="img-thumbnail mt-1">
+      </div>
+    </div>
+</div>
+<div class="container my-5 pt-5 animated fadeIn fast" *ngIf="!producto" >
+  <h2 class="text-center">Nuestros Productos</h2>
+  <div class="d-flex justify-content-center mt-5 pt-4" *ngIf="loading" >
+    <div class="spinner-border text-warning" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <div class="row" *ngIf="!loading && !producto" >
+    <div class="col-12 col-md-4 py-2" *ngFor="let item of productos" >
+      <app-productos-child [producto]="item"></app-productos-child>
+    </div>
+  </div>
+</div>

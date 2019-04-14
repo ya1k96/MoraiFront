@@ -1,0 +1,11 @@
+<div class="card ml-3 mr-2 ">
+  <img class="card-img-top" [src]="item.img_src" alt="Card image cap">
+  <div class="card-body">
+    <h4 class="card-title"> {{ item.nombre }} </h4>
+    <p class="card-text">
+      Some quick example text to build on the card title
+      and make up the bulk of the card's content.
+    </p>
+    <a *ngIf="!id"  [routerLink]="['/productos/',item._id]" class="btn btn-primary">ver</a>
+  </div>
+</div>

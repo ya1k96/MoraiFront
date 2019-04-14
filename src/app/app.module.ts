@@ -12,13 +12,17 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { ServicesComponent } from './componentes/services/services.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductosComponent } from './componentes/productos/productos.component';
+import { ProductosChildComponent } from './componentes/productos-child/productos-child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ServicesComponent,
-    FooterComponent
+    FooterComponent,
+    ProductosComponent,
+    ProductosChildComponent
   ],
   imports: [
     BrowserModule,

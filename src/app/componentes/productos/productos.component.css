@@ -1,0 +1,8 @@
+.container.mt-5.pt-4 {
+    padding: 4rem !important;
+}
+@media (min-width: 300px) {
+    .container.mt-5.pt-4 {
+        padding: 0rem !important;
+    }
+}
