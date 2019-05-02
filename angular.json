@@ -27,6 +27,8 @@
               "src/assets/css/bootstrap.css",
               "src/assets/css/agency.css",
               "src/assets/css/animate.css",
+              "src/assets/css/ui.css",
+              "src/assets/css/responsive.css",
               "src/assets/css/miclase.css"              
             ],
             "scripts": [

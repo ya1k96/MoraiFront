@@ -13,27 +13,16 @@ productos = [];
 producto: any;
 loading: boolean;
   constructor( private dataService: DataServiceService,
-               private params: ActivatedRoute ) {
-
-}
+               private params: ActivatedRoute ) { }
 
   ngOnInit() {
-    const id = this.params.snapshot.params.id;
-    if ( !id ) {
-
       this.loading = true;
       this.dataService.getProductos()
       .subscribe( (resp: any) => {
         this.productos = resp;
         this.loading = false;
-        console.log(resp);
-    });
-    } else {
-
-      this.dataService.getProducto(id)
-        .subscribe( (resp: any) => this.producto = resp );
-
+      });
     }
-  }
 
 }
+

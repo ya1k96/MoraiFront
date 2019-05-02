@@ -1,16 +1,16 @@
-<div class="container mt-5 pt-4 animated fadeIn fast" *ngIf="producto">  
+<!-- <div class="container mt-5 pt-4 animated fadeIn fast" *ngIf="producto">  
     <div class="row" >
-      <div class="col-md-8 mt-5">
+      <div class="offset-md-2 col-md-8 mt-5">
         <app-productos-child [producto]="producto"></app-productos-child>    
       </div>
-      <div class="col-md-3 mt-5">
+       <div class="col-md-3 mt-5">
         <img src="../../../assets/img/productos/NOIMG.png" alt="" class="img-thumbnail mt-1">
         <img src="../../../assets/img/productos/NOIMG.png" alt="" class="img-thumbnail mt-1">
         <img src="../../../assets/img/productos/NOIMG.png" alt="" class="img-thumbnail mt-1">
-      </div>
+      </div> 
     </div>
-</div>
-<div class="container my-5 pt-5 animated fadeIn fast" *ngIf="!producto" >
+</div> -->
+ <div class="container my-5 pt-5 animated fadeIn fast" *ngIf="!producto" >
   <h2 class="text-center">Nuestros Productos</h2>
   <div class="d-flex justify-content-center mt-5 pt-4" *ngIf="loading" >
     <div class="spinner-border text-warning" role="status">
@@ -18,8 +18,32 @@
     </div>
   </div>
   <div class="row" *ngIf="!loading && !producto" >
-    <div class="col-12 col-md-4 py-2" *ngFor="let item of productos" >
-      <app-productos-child [producto]="item"></app-productos-child>
+    <div class="col-md-4" *ngFor="let item of productos">
+      <figure class="card card-product">
+        <div class="img-wrap"><img width="240" height="240" [src]="item.img_src"></div>
+        <figcaption class="info-wrap">
+            <h4 class="title"> {{ item.nombre }} </h4>
+            <p class="desc">Some small description goes here</p>
+            <div class="rating-wrap">
+              <ul class="rating-stars">
+                <li style="width:80%" class="stars-active"> 
+                  <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+                </li>
+              </ul>
+              <div class="label-rating">132 reviews</div>
+              <div class="label-rating">154 orders </div>
+            </div> <!-- rating-wrap.// -->
+        </figcaption>
+        <div class="bottom-wrap">
+          <a [routerLink]="['/productos', item._id]" class="btn btn-sm btn-primary float-right">Detalles</a>	
+          <div class="price-wrap h5">
+            <span class="price-new">$1280</span> <del class="price-old">$ {{ item.precio }} </del>
+          </div> <!-- price-wrap.// -->
+        </div> <!-- bottom-wrap.// -->
+      </figure>
     </div>
   </div>
-</div>
+</div> 

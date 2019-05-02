@@ -14,6 +14,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductosComponent } from './componentes/productos/productos.component';
 import { ProductosChildComponent } from './componentes/productos-child/productos-child.component';
+import { UsuarioComponent } from './componentes/usuario/usuario.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProductosChildComponent } from './componentes/productos-child/productos
     ServicesComponent,
     FooterComponent,
     ProductosComponent,
-    ProductosChildComponent
+    ProductosChildComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,

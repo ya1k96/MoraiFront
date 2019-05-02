@@ -9,7 +9,7 @@ import { DataServiceService } from 'src/app/servicios/data-service.service';
 })
 export class ProductosChildComponent implements OnInit {
 // tslint:disable-next-line:no-input-rename
-@Input('producto') item: any;
+item: any;
 id: string;
   constructor( private params: ActivatedRoute,
                private  dataService: DataServiceService ) {
@@ -17,6 +17,8 @@ id: string;
     const id = this.params.snapshot.params.id;
     if ( id ) {
       this.id = id;
+      this.dataService.getProducto(id)
+        .subscribe( (resp: any) => this.item = resp );
     }
   }
 
