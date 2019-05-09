@@ -1,0 +1,102 @@
+
+<div class="card">
+  <article class="card-body mx-auto" style="max-width: 400px;">
+    <h4 class="card-title mt-3 text-center">Create Account</h4>
+    <p class="text-center">Get started with your free account</p>
+    <p>
+      <a href="" disabled="true" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i> &nbsp; Login via Twitter</a>
+      <a href="" disabled="true" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i> &nbsp; Login via facebook</a>
+    </p>
+    <p class="divider-text">
+          <span>OR</span>
+      </p>
+    <form action="" [formGroup]="forma" [ngClass]="{ 'was-validated' : forma.valid }">
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+         </div>
+            <input name="nombre" formControlName="nombre" class="form-control" placeholder="Full name" type="text"
+            [ngClass]="{ 'is-invalid' : forma.get('nombre').hasError('required') 
+            && forma.get('nombre').dirty
+            && forma.get('nombre').touched }">
+            <div class="invalid-feedback">
+              <p *ngIf="forma.get('nombre').hasError('required')"> Ingresa tu nombre</p>
+            </div>
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+         </div>
+            <input name="email" autocomplete="false" formControlName="email" class="form-control" placeholder="Email address"
+            [ngClass]="{ 'is-invalid': forma.get('email').hasError('required')  
+            && forma.get('email').touched 
+            && forma.get('email').dirty
+            || forma.get('email').hasError('email') 
+            && forma.get('email').touched 
+            && forma.get('email').dirty
+          }">
+            <div class="invalid-feedback">
+              <p *ngIf="forma.get('email').hasError('required')" >Ingresa un correo</p>
+              <p *ngIf="forma.get('email').hasError('email')" >Correo invalido</p>
+            </div>
+          </div> <!-- form-group// -->
+          <!-- {{ forma.get('email').hasError('required') }} -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+        </div>
+        <select class="custom-select" style="max-width: 120px;">
+            <option selected="">+971</option>
+            <option value="1">+972</option>
+            <option value="2">+198</option>
+            <option value="3">+701</option>
+        </select>
+          <input name="" class="form-control" placeholder="Phone number" type="text">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+        </div>
+        <select class="form-control">
+          <option selected=""> Select job type</option>
+          <option>Designer</option>
+          <option>Manager</option>
+          <option>Accaunting</option>
+        </select>
+      </div> <!-- form-group end.// -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+        </div>
+            <input class="form-control" name="contrasena" formControlName="contrasena" placeholder="Create password" type="password"
+            [ngClass]="{ 'is-invalid' : forma.get('contrasena').hasError('required')
+              && forma.get('contrasena').dirty
+              && forma.get('contrasena').touched }">
+            <div class="invalid-feedback">
+              <p *ngIf="forma.get('contrasena').hasError('required')">Introduce una contraseña</p> 
+            </div>
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+        </div>
+            <input class="form-control" name="reContrasena" formControlName="reContrasena" placeholder="Repeat password" type="password"
+            [ngClass]="{ 'is-invalid' : forma.get('reContrasena').hasError('required')
+              && forma.get('reContrasena').dirty
+              && forma.get('reContrasena').touched }">
+            <div class="invalid-feedback">
+              <p *ngIf="forma.get('reContrasena').hasError('required')" >Repite la contrasena</p>
+            </div>
+          </div> <!-- form-group// -->                                      
+        <div class="form-group">
+            <button (click)="registro()" 
+            [disabled]="forma.invalid" 
+            class="btn btn-primary btn-block"> Create Account</button>
+        </div> <!-- form-group// --> 
+    </form>
+
+      <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
+  
+  </article>
+  </div> <!-- card.// -->
+  

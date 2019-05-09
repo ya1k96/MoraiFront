@@ -1,9 +1,10 @@
+import Swal from 'sweetalert2';
 import { UsuarioService } from './../../servicios/usuario.service';
 import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { subscribeOn } from 'rxjs/operators';
 import { Route, Router } from '@angular/router';
+import { Storage } from 'src/app/libs/storage';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -14,17 +15,19 @@ export class NavbarComponent implements OnInit {
   public formGroup: FormGroup;
   usuario;
   notif;
+  storage = new Storage();
   constructor( private usuarioService: UsuarioService,
                private modalService: NgbModal,
                private formBuilder: FormBuilder,
-               private route: Router ) { }
+               private route: Router ) {
+
+               }
 
   public ngOnInit() {
     this.buildForm();
     if ( localStorage.getItem('user') ) {
       this.usuario = JSON.parse( localStorage.getItem('user') );
     }
-    
   }
 
   private buildForm() {
@@ -35,10 +38,10 @@ export class NavbarComponent implements OnInit {
   }
 
   openModal( content ) {
-    console.log(content._parentView.component.modalService._modalStack._document.childNodes);
+    // console.log(content._parentView.component.modalService._modalStack._document.childNodes);
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'})
     .result.then((result) => {
-      console.log(result);
+      // console.log(result);
     });
   }
 
@@ -57,8 +60,13 @@ export class NavbarComponent implements OnInit {
         this.route.navigate(['/usuario']);
         console.log( resp );
       }, err => {
-        const element = `<strong>Error</strong> <p>intente nuevamente</p>`;
-        console.log(this.notif);
+        if ( err.error ) {
+          Swal.fire({
+            type: 'error',
+            title: 'Error',
+            text: err.error.message
+          });
+        }
       });
     }
   }

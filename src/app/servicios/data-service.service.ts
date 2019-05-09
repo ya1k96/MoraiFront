@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { ItemProducto } from '../libs/item.producto';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ headers = new HttpHeaders();
   }
 
   getProductos() {
-    return this.http.get( `${this.url}/producto/get`, { headers: this.headers })
+    return this.http.get<ItemProducto[]>( `${this.url}/producto/get`, { headers: this.headers })
     .pipe( map( (resp: any) => resp.productos ) );
   }
 

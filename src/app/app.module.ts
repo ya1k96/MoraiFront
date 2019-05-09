@@ -15,6 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductosComponent } from './componentes/productos/productos.component';
 import { ProductosChildComponent } from './componentes/productos-child/productos-child.component';
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
+import { CartComponent } from './componentes/cart/cart.component';
+import { ItemCartComponent } from './componentes/item-cart/item-cart.component';
+import { RegisterUserComponent } from './componentes/register-user/register-user.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { UsuarioComponent } from './componentes/usuario/usuario.component';
     FooterComponent,
     ProductosComponent,
     ProductosChildComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    CartComponent,
+    ItemCartComponent,
+    RegisterUserComponent
   ],
   imports: [
     BrowserModule,
